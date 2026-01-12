@@ -1,0 +1,50 @@
+git remote add upstream https://github.com/epfl-ada/2025
+git branch -r
+
+
+git remote -v
+
+origin  https://github.com/AnnaTuz/ADA-EPFL.git (fetch)
+origin  https://github.com/AnnaTuz/ADA-EPFL.git (push)
+upstream        https://github.com/epfl-ada/2025 (fetch)
+upstream        https://github.com/epfl-ada/2025 (push)
+
+
+git fetch upstream
+
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (2/2), done.
+remote: Total 8 (delta 1), reused 1 (delta 1), pack-reused 6 (from 1)
+Unpacking objects: 100% (8/8), 5.15 KiB | 142.00 KiB/s, done.
+From https://github.com/epfl-ada/2025
+   e50edd8..34d7da0  main       -> upstream/main
+
+
+git merge upstream/main
+
+Merge made by the 'ort' strategy.
+ Exam/README.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+
+git push origin main
+
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 304 bytes | 304.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/AnnaTuz/ADA-EPFL.git
+   4d10366..2d9cbd2  main -> main
+
+
+conda create -n ada_exam python=3.13
+conda activate ada_exam
+conda deactivate
+
+python -m pip --version
+cd exam
+pip install -r requirements.txt
+pip list
